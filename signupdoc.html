@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Doctor at your Convenience</title>
+    <style>
+        /* Body Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://i.gifer.com/ZZ5H.gif'); /* Sparkles animation in background */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Form Scrollable Container */
+        .form-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-y: auto; /* Allow vertical scrolling */
+            width: 100%;
+        }
+
+        /* Form Container */
+        .form-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Title Styling */
+        h1 {
+            color: #004d00;
+            margin-bottom: 20px;
+            font-size: 28px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Input Fields */
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #66bb6a; /* Green border on focus */
+            outline: none;
+        }
+
+        /* Submit Button */
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        /* Link Styling */
+        a {
+            display: block;
+            margin-top: 15px;
+            color: #2e7d32;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        a:hover {
+            color: #1b5e20;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Sparkle Effect */
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            animation: sparkle 1.5s infinite ease-in-out;
+        }
+
+        /* Sparkle Positions */
+        .sparkle:nth-child(1) { top: 20%; left: 30%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 50%; left: 60%; animation-delay: 0.5s; }
+        .sparkle:nth-child(3) { top: 70%; left: 20%; animation-delay: 1s; }
+        .sparkle:nth-child(4) { top: 80%; left: 80%; animation-delay: 1.5s; }
+        .sparkle:nth-child(5) { top: 40%; left: 10%; animation-delay: 2s; }
+    </style>
+</head>
+<body>
+
+    <!-- Sparkles in the background -->
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+    <div class="sparkle"></div>
+
+    <!-- Form Scrollable Wrapper -->
+    <div class="form-wrapper">
+        <!-- Form Container -->
+        <div class="form-container">
+            <h1>Signup as a Doctor</h1>
+            <form action="/signup_doctor" method="post">
+                <label for="fullname">Full Name:</label><br>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required><br>
+                
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
+
+                <label for="specialization">Speciality:</label><br>
+                <input type="text" id="specialization" name="specialization" placeholder="Enter your specialization" required><br>
+
+                <label for="qualification">Qualification:</label><br>
+                <input type="text" id="qualification" name="qualification" placeholder="Enter your qualification" required><br>
+
+                <label for="experience">Years of Experience:</label><br>
+                <input type="text" id="experience" name="experience" placeholder="Enter your experience" required><br>
+
+                <label for="hospital">Clinic/Hospital Affiliation:</label><br>
+                <input type="text" id="hospital" name="hospital" placeholder="Enter the hospital you work at" required><br>
+
+                <label for="licenseNumber">Medical License Number:</label><br>
+                <input type="text" id="hospital" name="hospital" placeholder="Enter License Number" required><br>
+                <label for="address">Address:</label><br>
+                <input type="text" id="address" name="address" placeholder="Enter your adderss" required><br>
+
+                <label for="achievements">Achievements:</label><br>
+                <textarea id="achievements" name="achievements" placeholder="Enter your achievements, qualifications, certifications, etc." rows="4"></textarea><br>
+
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required><br>
+
+                <label for="re-password">Re-enter Password:</label><br>
+                <input type="password" id="re-password" name="re-password" placeholder="Re-enter your password" required><br>
+                
+
+                <input type="submit" value="Signup">
+            </form>
+            <a href="login.html">Already have an account? Login</a>
+        </div>
+    </div>
+
+</body>
+</html>
+

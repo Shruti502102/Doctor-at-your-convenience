@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor at Your Convenience</title>
+    <style>
+        /* CSS for styling */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce {
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-30px);
+            }
+            60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(222, 229, 218, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            background-color: rgba(245, 247, 247, 0.9);
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-right: 10px;
+            background-color: #157103;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .footer {
+            background-color: #99ccff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .footer a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 0 10px;
+            background-color: #0026ff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer a:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .about-us,
+        .chatbot-section,
+        .call-to-doctor {
+            background-color: #ffffcc;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        #logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 200px;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        .dashboard {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .dashboard button {
+            padding: 20px 50px;
+            background-color: #3f860c;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .dashboard button img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .dashboard button:hover {
+            background-color: #24c062;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img id="logo" src="Screenshot 2024-05-03 200417.png" alt="LOGODYC Logo">
+        <h1>Doctor at Your Convenience</h1>
+        <nav>
+            <a href="http://127.0.0.1:3000/home.html">Home</a>
+            <a href="signupdoc.html">Doctor Sign Up</a>
+            <a href="signuppatient.html">Patient Sign Up</a>
+            <a href="login.html">Login</a>
+            <a href="#">Help</a>
+        </nav>
+
+        <div class="dashboard">
+            <button onclick="location.href='http://127.0.0.1:3000/home.html'">
+                <img src="WhatsApp Image 2024-05-02 at 1.32.12 PM.jpeg" alt="Medical Bot Logo">
+                Talk to Medical Bot
+            </button>
+            <button onclick="location.href='#call-to-doctor'">
+                <img src="WhatsApp Image 2024-05-02 at 1.33.07 PM.jpeg" alt="Doctor Logo">
+                Talk to Doctor
+            </button>
+        </div>
+
+        <div id="chatbot-section" class="chatbot-section">
+            <h2>Find Your Disease by Medical Bot</h2>
+            <p>Use our chatbot to find information about your symptoms and possible diseases. Get instant guidance and recommendations for further action.</p>
+        </div>
+
+        <div id="call-to-doctor" class="call-to-doctor">
+            <h2>Talk to Doctor</h2>
+            <p>If you need immediate medical assistance or advice, don't hesitate to call one of our experienced doctors. Our team is available 24/7 to help you with your healthcare needs.</p>
+        </div>
+
+        <div class="about-us">
+            <h2>About Us</h2>
+            <p>Our mission is to empower patients to communicate comfortably in their mother tongue, ensuring language is not a barrier to accessing healthcare.</p>
+        </div>
+
+        <div class="footer">
+            <a href="#">Subscribe</a>
+            <a href="#">Like</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Cookies</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

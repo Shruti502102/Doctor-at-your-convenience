@@ -1,0 +1,54 @@
+<script src="https://cdn.jsdelivr.net/npm/i18next@21.6.12/dist/umd/i18next.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@1.7.1/dist/umd/i18nextHttpBackend.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/i18next@21.6.12/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+<nav>
+    <ul>
+      <li><a href="home.HTML">Home</a></li>
+      <li><a href="login.html">Login</a></li>
+      <li><a href="signupdoc.html">Sign Up</a></li>
+      <li><a href="signuppatient.html">Sign Up</a></li>
+      <li>
+        <select id="language-selector">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+  <script>
+    i18next
+      .use(i18nextHttpBackend)
+      .use(i18nextBrowserLanguageDetector)
+      .init({
+        compatibilityJSON: 'v3',
+        lng: navigator.language || navigator.userLanguage,
+        fallbackLng: 'en',
+        debug: false,
+        resources: {
+          en: {
+            translation: {
+              // Add your English translations here
+            }
+          },
+          es: {
+            translation: {
+              // Add your Spanish translations here
+            }
+          },
+          fr: {
+            translation: {
+              // Add your French translations here
+            }
+          }
+        }
+      });
+  </script>
+  <script>
+    const languageSelector = document.querySelector('#language-selector');
+  
+    languageSelector.addEventListener('change', () => {
+      i18next.changeLanguage(languageSelector.value);
+    });
+  </script>
+ 

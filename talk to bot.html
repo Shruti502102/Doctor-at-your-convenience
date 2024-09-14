@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Consultation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #0056b3;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-size: 1.1em;
+        }
+
+        input[type="file"],
+        textarea {
+            padding: 10px;
+            width: 100%;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        button {
+            padding: 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .chatbox {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .chatbox p {
+            background-color: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            max-width: 70%;
+        }
+
+        .chatbox .user-message {
+            text-align: right;
+        }
+
+        .chatbox .doctor-message {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Consult with a Doctor</h1>
+
+        <!-- File Upload Form -->
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="fileUpload">Upload Your Medical Reports:</label>
+            <input type="file" id="fileUpload" name="fileUpload" accept=".pdf, .docx, .jpg, .png, .jpeg" required>
+
+            <label for="description">Describe Your Problem:</label>
+            <textarea id="description" name="description" placeholder="Type your symptoms or problems here..." required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- Chatbox (Just a basic layout) -->
+        <div class="chatbox">
+            <p class="user-message">User: I have been feeling dizzy and fatigued lately.</p>
+            <p class="doctor-message">Doctor: Have you been experiencing any other symptoms like headaches or nausea?</p>
+            <!-- More chat messages will be dynamically loaded in an actual chat application -->
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+
